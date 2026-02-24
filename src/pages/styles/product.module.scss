@@ -1,0 +1,55 @@
+
+.productSection{
+    padding: 16px;
+    .productTopsec{
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        .prodTopRight{
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            .cartBtn{
+                position: relative;
+                display: inline;
+                cursor: pointer;
+            }
+            span{
+                position: absolute;
+                top: -2px;
+                right:-6px;
+                width: 16px;
+                height: 16px;
+                border-radius: 20px;
+                color: #fff;
+                font-size: 10px;
+                background-color: brown;
+                display: grid;
+                place-content: center;
+            }
+        }
+    }
+    .productFindSec{
+        max-width: 767px;
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        gap: 16px;
+        padding-top: 24px;
+        .searchInp{
+
+        }
+        .filterCategory{
+
+        }
+        .sortProducts{
+
+        }
+    }
+}
+.productListingContainer{
+    padding-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}

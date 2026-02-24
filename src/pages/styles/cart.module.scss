@@ -1,0 +1,28 @@
+.cartContainerDivider {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px;
+  .cartLeftSec {
+    display: flex;
+    align-items: center;
+    .ctProductimage {
+      width: 180px;
+      height: 240px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .ctProductDetails {
+      .prdName {
+        font-size: 16px;
+      }
+      .prdprice {
+        font-size: 18px;
+        
+      }
+    }
+  }
+}

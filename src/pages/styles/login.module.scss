@@ -1,0 +1,24 @@
+
+.logincontainerwrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    .loginContainer{
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        h2{
+            font-size: 24px;
+        }
+        .logindesc{
+            font-size: 12px;
+            padding-block:8px 24px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+}

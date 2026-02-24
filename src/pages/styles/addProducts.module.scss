@@ -1,0 +1,42 @@
+.addProductContainer {
+    padding: 16px;
+    .inpelem{
+        max-width: 320px;
+        margin-block: 12px;
+        input{
+            width: 100%;
+        }
+    }
+  .previewProduct {
+    width: 240px;
+    height: 240px;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+  }
+  .uploadFile{
+    max-width: 320px;
+    height: 120px;
+    border: 1px solid;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    input{
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    span{
+        font-size: 12px;
+        color: blue;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+  }
+}
