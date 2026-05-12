@@ -7,6 +7,7 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import Cart from "./pages/Cart";
 import Orders from "./pages/Orders";
 import AdminProducts from "./pages/AdminProducts";
+import OAuthSuccess from "./pages/OauthSuccess";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+           <Route path="/success" element={<OAuthSuccess />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/products" element={<Products />} />
             <Route path="/cart" element={<Cart />} />

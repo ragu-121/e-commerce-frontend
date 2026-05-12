@@ -18,13 +18,13 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(()=>{
-    const savedUser = localStorage.getItem('token');
+    const savedUser = localStorage.getItem('accessToken');
     return savedUser ? JSON.parse(atob(savedUser.split('.')[1])) : null;
   });
 
   // Load user from token on refresh
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("accessToken");
     if (token) {
       const decoded: User = JSON.parse(atob(token.split(".")[1]));
 
@@ -35,15 +35,17 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const login = async (email: string, password: string) => {
     const res = await api.post("/auth/login", { email, password });
-    localStorage.setItem("token", res.data.token);
+    localStorage.setItem("accessToken", res.data.accessToken);
 
-    const decoded: User = JSON.parse(atob(res.data.token.split(".")[1]));
+    const decoded: User = JSON.parse(atob(res.data.accessToken.split(".")[1]));
     setUser(decoded);
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
+    api.post('/auth/logout')
+    localStorage.removeItem("accessToken");
     setUser(null);
+    // window.location.href = "/login";
   };
 
   return (

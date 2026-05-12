@@ -22,36 +22,45 @@ const Login = () => {
         }
     };
 
+    const loginWithGoogle = () => {
+        window.open("http://localhost:5000/auth/google", "_self");
+    };
+
     return (
         <div className={styles.logincontainerwrapper}>
             <div className={styles.loginContainer}>
-            <h2>Welcome back</h2>
-            <p className={styles.logindesc}>Please enter your details.</p>
+                <h2>Welcome back</h2>
+                <p className={styles.logindesc}>Please enter your details.</p>
 
-            {error && <p className={styles.error}>{error}</p>}
+                {error && <p className={styles.error}>{error}</p>}
 
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
 
-                <input
-                    type="password"
-                    placeholder="Password"
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
 
-                <button type="submit">Login</button>
+                    <button type="submit">Login</button>
+                </form>
+                <span>Or</span>
+                <div>
+                    <button onClick={loginWithGoogle}>Login with Google</button>
+                </div>
                 <div>
                     <span>Don't have an account? <Link to='/signup'>Click here to SignUp</Link></span>
                 </div>
-            </form>
+
             </div>
         </div>
     );
